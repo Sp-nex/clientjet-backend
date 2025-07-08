@@ -5,7 +5,7 @@ const path = require("path");
 const express = require("express");
 const cors = require("cors"); 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.port||3000;
 const DATA_FILE = path.join(__dirname, 'orders.json');
 
 app.use(cors());
@@ -49,7 +49,7 @@ app.get('/api/orders', (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
 // PATCH: update order status
 app.patch('/api/orders/:id', (req, res) => {
