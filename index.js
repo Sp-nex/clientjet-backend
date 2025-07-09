@@ -44,6 +44,16 @@ app.get('/api/orders', (req, res) => {
   const data = fs.readFileSync(DATA_FILE);
   const orders = JSON.parse(data);
   res.json(orders);
+  app.get("/api/orders/:id", (req, res) => {
+    const orders = JSON.parse(fs.readFileSync("orders.json"));
+    const order = orders.find(o => o.id === req.params.id);
+    if (order) {
+      res.json(order);
+    } else {
+      res.status(404).json({ error: "Order not found" });
+    }
+  });
+  
 });
 
 // Start the server
