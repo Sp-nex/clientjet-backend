@@ -1,9 +1,10 @@
 {
-  "name": "server",
+  "name": "clintjet-backend",
   "version": "1.0.0",
   "main": "index.js",
+   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +12,6 @@
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "express": "^4.18.2"
   }
 }
